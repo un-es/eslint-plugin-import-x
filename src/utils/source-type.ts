@@ -1,10 +1,19 @@
 import type { RuleContext } from '../types'
 
 export default function sourceType(context: RuleContext) {
-  if ('sourceType' in context.parserOptions) {
-    return context.parserOptions.sourceType
-  }
   if ('languageOptions' in context && context.languageOptions) {
-    return context.languageOptions.sourceType
+    if (
+      'parserOptions' in context.languageOptions &&
+      context.languageOptions.parserOptions &&
+      context.languageOptions.parserOptions.sourceType
+    ) {
+      return context.languageOptions.parserOptions.sourceType
+    }
+    if (context.languageOptions.sourceType) {
+      return context.languageOptions.sourceType
+    }
+  }
+  if (context.parserOptions.sourceType) {
+    return context.parserOptions.sourceType
   }
 }

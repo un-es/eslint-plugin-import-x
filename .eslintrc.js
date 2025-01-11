@@ -42,6 +42,7 @@ module.exports = {
     'n/no-missing-import': 'off',
     'n/no-missing-require': 'off',
     'n/no-unsupported-features/es-syntax': 'off',
+    'unicorn/expiring-todo-comments': 'off',
     'unicorn/no-array-callback-reference': 'off',
     'unicorn/no-array-reduce': 'off',
     'unicorn/no-null': 'off',

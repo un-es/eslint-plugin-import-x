@@ -23,5 +23,9 @@ export default {
   languageOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
+    parserOptions: {
+      ecmaVersion: 2018,
+      sourceType: 'module',
+    },
   },
 } satisfies PluginFlatBaseConfig
