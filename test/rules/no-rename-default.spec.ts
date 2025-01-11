@@ -37,6 +37,11 @@ ruleTester.run('no-rename-default', rule, {
     `import _ from './no-rename-default/anonymous-class'`,
     `import _ from './no-rename-default/anonymous-object'`,
     `import _ from './no-rename-default/anonymous-primitive'`,
+
+    // https://github.com/un-ts/eslint-plugin-import-x/issues/136
+    test({
+      code: '/** #136 */ import exportDefaultStringAndNamed from "./export-default-as-named-decl"',
+    }),
   ],
   invalid: [],
 })
