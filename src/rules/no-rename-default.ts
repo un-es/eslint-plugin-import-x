@@ -142,6 +142,17 @@ export = createRule<[Options?], MessageId>({
         return
       }
 
+      // Some packages have a default export that is meant to be renamed. For example,
+      // "typescript-eslint" has a default export of "_default" and "eslint-plugin-jsdoc" has a
+      // default export of "index".
+      const defaultExportNameTrimmed = defaultExportName.replace(/^_+/, '') // Trim leading underscores.
+      if (
+        defaultExportNameTrimmed === 'default' ||
+        defaultExportNameTrimmed == 'index'
+      ) {
+        return
+      }
+
       const importTarget = node.parent.source?.value
       const importBasename = path.basename(exportMap.path)
 
