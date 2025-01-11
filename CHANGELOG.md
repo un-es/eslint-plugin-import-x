@@ -1,5 +1,11 @@
 # eslint-plugin-import-x
 
+## 4.7.0
+
+### Minor Changes
+
+- [#214](https://github.com/un-ts/eslint-plugin-import-x/pull/214) [`091d2da`](https://github.com/un-ts/eslint-plugin-import-x/commit/091d2da9ee668e90ac7ee9aeb08437bc96871296) Thanks [@mrginglymus](https://github.com/mrginglymus)! - Improve windows support
+
 ## 4.6.1
 
 ### Patch Changes
